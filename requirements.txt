@@ -1,0 +1,8 @@
+bsdiff4
+certifi
+chardet
+pyOpenSSL
+PyQt5
+PyQtWebEngine
+requests
+urllib3

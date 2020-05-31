@@ -1,0 +1,24 @@
+{
+    "settings": {
+        "version": 1.0
+    },
+    "video": {
+        "antialiasing": 0,
+        "blend-animation": true,
+        "disable-accessories": false,
+        "display-mode": "window",
+        "enable-cursor": true,
+        "experimental-settings": true,
+        "gui-animation": true,
+        "lod-distance": 1,
+        "particle-effects": true,
+        "resolution": [
+            800,
+            600
+        ],
+        "show-fps": false,
+        "smooth-frames": true,
+        "stereo-3d": false,
+        "v-sync": true
+    }
+}
