@@ -12,7 +12,7 @@ class ImageButton(QLabel):
         self.count = 0
         self.normal = QPixmap(gui.frame.resource_path('resources/%s/normal.png' % name))
         self.hover = QPixmap(gui.frame.resource_path('resources/%s/hover.png' % name))
-        self.depressed = QPixmap(gui.frame.resource_path('resources/%s/depressed.png' % name))
+        self.depressed = QPixmap(gui.frame.resource_path('resources/%s/normal.png' % name))
         self.isHovering = False
         self.isDepressed = False
         self.enabled = True

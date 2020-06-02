@@ -1,4 +1,4 @@
-Version = '1.2.3-p3qt5'
+Version = '2.0.0'
 DefaultJSONLauncherInfo = 'https://download.toontownrewritten.com/launcher/windows/ttr_launcher.json'
 JSONLauncherDict = {'win32': 'https://download.toontownrewritten.com/launcher/windows/ttr_launcher.json', 
    'linux2': 'https://download.toontownrewritten.com/launcher/linux/ttr_launcher.json', 

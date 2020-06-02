@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\Parker\\Documents\\Git\\TTRLauncher'],
+             pathex=['D:\\Git\\TTRLauncher'],
              binaries=[],
              datas=[],
              hiddenimports=[],

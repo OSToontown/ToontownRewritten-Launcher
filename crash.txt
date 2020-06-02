@@ -1,0 +1,25 @@
+KeyboardInterrupt: 
+  File "main.py", line 17, in run_launcher
+    launcher.start()
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/launcher.py", line 91, in start
+    self.request('CheckForUpdates')
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/fsm/FSM.py", line 61, in request
+    getattr(self, 'enter' + state)(*args, **kwargs)
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/launcher.py", line 119, in enterCheckForUpdates
+    self.request('Patch')
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/fsm/FSM.py", line 61, in request
+    getattr(self, 'enter' + state)(*args, **kwargs)
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/launcher.py", line 255, in enterPatch
+    self.request('GetCredentials')
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/fsm/FSM.py", line 61, in request
+    getattr(self, 'enter' + state)(*args, **kwargs)
+  File "/run/media/parkerhanegan/Elements/Git/TTRLauncher/launcher.py", line 145, in enterGetCredentials
+    username, password = self.input.get(block=True, timeout=None)
+  File "/usr/lib/python3.8/multiprocessing/queues.py", line 97, in get
+    res = self._recv_bytes()
+  File "/usr/lib/python3.8/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/usr/lib/python3.8/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/usr/lib/python3.8/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)

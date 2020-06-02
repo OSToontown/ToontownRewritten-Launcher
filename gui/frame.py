@@ -8,8 +8,8 @@ from launcher import messagetypes, localizer, settings
 import json, webbrowser, base64, sys, os, traceback
 import http.client as httplib
 LAUNCHER_CSS = '\nQProgressBar\n{\n    color: white;\n}\nQMainWindow\n{\n    background: transparent;\n    font-family: Arial;\n}\n'
-LINEEDIT_CSS = '\nQLineEdit {\n    font-size: 13px;\n    border: none;\n    background-color: #181818;\n    color: white;\n}\n'
-LABEL_CSS = '\nQLabel\n{\n    color:white;\n    font-size: 13px;\n}\n'
+LINEEDIT_CSS = '\nQLineEdit {\n    font-size: 13px;\n    border: none;\n    background-color: #white;\n    color: black;\n}\n'
+LABEL_CSS = '\nQLabel\n{\n    color:black;\n    font-size: 13px;\n}\n'
 
 def resource_path(filename):
     #Intended for local installs and snap applications
@@ -44,21 +44,14 @@ class LauncherPanel(QLabel):
         self.resize(900, 680)
         self.frame = parent
         self.xButton = XButton(self)
-        self.xButton.move(740, 49)
+        self.xButton.move(765, 69)
         bg = QPixmap(resource_path('resources/Background.png'))
         self.setPixmap(bg)
-        self.newsTitle = QLabel(self)
-        self.newsTitle.move(180, 140)
-        self.newsTitle.resize(100, 100)
-        self.newsTitle.setStyleSheet(LABEL_CSS)
-        self.newsTitle.setText('<h1>News</h1>')
-        self.newsTitle.mouseReleaseEvent = self.mouseReleaseEvent
         self.news = HtmlView(self)
-        self.news.move(67, 215)
-        self.news.resize(300, 120)
+        self.news.move(127, 180)
+        self.news.resize(300, 330)
         self.news.setUrl(QUrl('https://toontownrewritten.com/news/launcher'))
-        self.news.setAttribute(Qt.WA_TranslucentBackground)
-        self.news.setStyleSheet('background:transparent')
+        self.news.setStyleSheet(LABEL_CSS)
         page = self.news.page()
         page.setBackgroundColor(Qt.transparent)
         #TODO: Need to draw surlee in front of the qtwebengine
@@ -71,7 +64,7 @@ class LauncherPanel(QLabel):
         #self.surlee.raise_()
         #page.stackUnder(self.surlee)
         self.label = QLabel(self)
-        self.label.move(548, 140)
+        self.label.move(535, 420)
         self.label.resize(187, 75)
         self.label.setAlignment(Qt.AlignTop | Qt.AlignHCenter)
         self.label.mouseReleaseEvent = self.mouseReleaseEvent
@@ -79,21 +72,21 @@ class LauncherPanel(QLabel):
         self.label.setWordWrap(True)
         self.progress = QProgressBar(self)
         self.progress.resize(175, 15)
-        self.progress.move(548, 200)
+        self.progress.move(535, 480)
         self.progress.setRange(0, 100)
         self.mButton = MButton(self)
-        self.mButton.move(685, 49)
+        self.mButton.move(705, 69)
         self.ubox = QLineEdit(self)
-        self.ubox.move(515, 323)
-        self.ubox.resize(214, 29)
+        self.ubox.move(539, 327)
+        self.ubox.resize(150, 21)
         self.ubox.setStyleSheet(LINEEDIT_CSS)
         self.pbox = QLineEdit(self)
-        self.pbox.move(515, 364)
-        self.pbox.resize(214, 29)
+        self.pbox.move(539, 350)
+        self.pbox.resize(150, 21)
         self.pbox.setStyleSheet(LINEEDIT_CSS)
         self.pbox.setEchoMode(QLineEdit.Password)
         self.goButton = GoButton(self)
-        self.goButton.move(747, 345)
+        self.goButton.move(690, 328)
         self.dragging = False
         self.ubox.returnPressed.connect(self.OnEnterPressed)
         self.pbox.returnPressed.connect(self.OnEnterPressed)
@@ -102,7 +95,7 @@ class LauncherPanel(QLabel):
         timer.timeout.connect(self.PollInput)
         timer.start()
         self.versionLabel = QLabel(self)
-        self.versionLabel.move(100, 130)
+        self.versionLabel.move(550, 86)
         self.versionLabel.resize(200, 23)
         self.versionLabel.setStyleSheet(LABEL_CSS)
         self.versionLabel.mouseReleaseEvent = self.mouseReleaseEvent
