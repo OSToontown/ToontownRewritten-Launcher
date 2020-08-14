@@ -1,6 +1,7 @@
 bsdiff4
 certifi
 chardet
+pyinstaller
 pyOpenSSL
 PyQt5
 PyQtWebEngine
