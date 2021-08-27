@@ -1,9 +1,9 @@
-# Toontown Rewritten Launcher Rebuilt
+# Toontown Rewritten Launcher Reengineering
 
-**Toontown Rewritten Launcher Rebuilt** is a rebuilt copy of the Toontown Rewritten Source Code found inside of the [TTR Flatpak](https://www.xytime.xyz/flatpaks/ttr/index.html). Not trying to do anything malicious here the entire launcher is owned by Toontown Rewritten Team just found it interesting they didnt compile it for the flatpak.
+**Toontown Rewritten Launcher Reengineering** is a reengineering of the Toontown Rewritten Source Code found inside of the [TTR Flatpak](https://www.xytime.xyz/flatpaks/ttr/index.html). Not trying to do anything malicious here the entire launcher is owned by Toontown Rewritten Team just found it interesting they didnt compile it for the flatpak.
 
 ## 📝 Note to TTR Staff
-If anyone from the TTR Team is reading this and wants this taken down please DM me on Discord at Cranky Supertoon#7376 to request for me to take it down.
+If anyone from the TTR Team is reading this and wants this taken down please DM me on Discord at Nora#2878 to request for me to take it down.
 
 ## 🗝 Built and managed with 
 * [Python](https://www.python.org/) - Coding Language
