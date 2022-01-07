@@ -91,48 +91,6 @@ class TTRLauncher(FSM):
         self.request('CheckForUpdates')
 
     def enterCheckForUpdates(self):
-
-        def versionCmp(v1, v2):
-            v1b = v1.split('.')
-            v2b = v2.split('.')
-            if len(v1b) != len(v2b):
-                return None
-            for i in range(len(v1b)):
-                v1bb = int(v1b[i])
-                v2bb = int(v2b[i])
-                if v1bb == v2bb:
-                    pass
-                else:
-                    if v1bb < v2bb:
-                        return False
-                    if v1bb > v2bb:
-                        return True
-
-            return False
-        if self.version is not None:
-            pass
-            try:
-                data = urlopen(settings.JSONLauncherDict.get(sys.platform, settings.DefaultJSONLauncherInfo))
-            except:
-                self.sendOutput((messagetypes.LAUNCHER_STATUS, localizer.UnableToCheckForUpdates))
-                self.dontClearMessage = True
-                self.request('Patch')
-                return
-            else:
-                try:
-                    data = json.load(data.read().decode('utf-8'))
-                except:
-                    self.sendOutput((messagetypes.LAUNCHER_ERROR, 'ERR001: %s' % localizer.ERR_JSONParseError))
-                    self.request('Patch')
-                    return
-
-            if versionCmp(data[0].get('version', '0.0.0'), self.version):
-                self.sendOutput((
-                 messagetypes.LAUNCHER_VERSION_UPDATE,
-                 data[0].get('version'),
-                 data[0].get('rnotes'),
-                 data[0].get('update', settings.DefaultDownloadLocation)))
-                self.request('Off')
         self.request('Patch')
         return
 
@@ -249,8 +207,6 @@ class TTRLauncher(FSM):
         self.patcher = threading.Thread(target=Patcher.Patch, name='Patcher-Thread', args=(self.__updateProgress, self.__updateFile))
         self.patcher.daemon = True
         self.patcher.start()
-        while self.patcher.isAlive():
-            time.sleep(0.2)
 
         self.request('GetCredentials')
 
